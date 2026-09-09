@@ -1,0 +1,15 @@
+# Python server artifacts
+__pycache__/
+*.py[cod]
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+
+# Logs
+*.log

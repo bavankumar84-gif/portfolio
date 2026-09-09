@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kumaresan B | Full Stack Web Developer & Software Engineer</title>
+  <meta name="description" content="Portfolio of Kumaresan B - Full Stack Web Developer & B.Tech IT Undergraduate @ LICET, Chennai. Specializing in MERN stack, Supabase, React, Node.js, AI security tools, and high-performance web systems." />
+  <meta name="keywords" content="Kumaresan B, Full Stack Developer, React, Node.js, MongoDB, Supabase, Portfolio, Software Engineer, Chennai, LICET" />
+  <meta name="author" content="Kumaresan B" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Full Viewport Interactive Spider-Web Mesh Canvas -->
+  <canvas id="spiderweb-canvas"></canvas>
+
+  <!-- Glowing Mouse Spotlight Aura & Custom Cursor Elements -->
+  <div class="cursor-spotlight-aura" id="spotlight-aura"></div>
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- Fixed Vertical Ruler Scales along Edge Boundaries -->
+  <div class="ruler-ticks ruler-left">
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div>
+  </div>
+  <div class="ruler-ticks ruler-right">
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div><div class="ruler-tick"></div><div class="ruler-tick"></div><div class="ruler-tick"></div>
+    <div class="ruler-tick major"></div>
+  </div>
+
+  <!-- Transparent Editorial Overlay Navbar -->
+  <header class="editorial-nav">
+    <a href="#hero-area" class="nav-logo">
+      <span>KUMARESAN</span>
+      <span class="nav-logo-script">dev</span>
+    </a>
+
+    <div class="nav-bracket-links">
+      <a href="#about" class="bracket-link">[ABOUT]</a>
+      <a href="#experience" class="bracket-link">[EXPERIENCE]</a>
+      <a href="#projects" class="bracket-link">[PROJECTS]</a>
+      <a href="#skills" class="bracket-link">[SKILLS]</a>
+      <a href="#education" class="bracket-link">[ACADEMICS]</a>
+      <a href="#contact" class="bracket-link">[CONTACT]</a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SECTION 1: HERO STAGE
+       ========================================================================== -->
+  <div class="hero-wrapper" id="hero-area">
+    <div class="hero-grid-stage">
+      
+      <!-- Left Column: Headline, Controls & Printing Intro -->
+      <div class="hero-left-col">
+        
+        <div class="headline-row">
+          <button class="arrow-control" id="prev-phrase-btn" aria-label="Previous Phrase">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="massive-headline-wrapper">
+            <h1 class="massive-headline" id="rotating-headline">FULL STACK DEVELOPER</h1>
+            <canvas id="shatter-canvas"></canvas>
+          </div>
+
+          <button class="arrow-control active" id="next-phrase-btn" aria-label="Next Phrase">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Printing Intro Box -->
+        <div class="printing-intro-box">
+          <span class="print-prefix">&gt;</span>
+          <span class="typed-printing-text" id="printing-intro-text"></span>
+          <span class="print-cursor"></span>
+        </div>
+
+        <!-- Sub-tagline Caption -->
+        <div class="hero-sub-caption">
+          EX-INTERN @ FLARENET COMPANY • ORIGIN 24H HACKATHON WINNER • CHENNAI, INDIA
+        </div>
+
+      </div>
+
+      <!-- Right Column: Glossy Floating Iridescent 3D Object Render -->
+      <div class="hero-right-col">
+        <div class="side-3d-container">
+          <canvas id="render-3d-canvas"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hero Corner Utility Controls -->
+    <div class="hero-corner-bar">
+      <button class="corner-pill-toggle" id="audio-toggle-btn">
+        <span class="audio-dot"></span>
+        <span id="audio-label">AUDIO: OFF</span>
+      </button>
+
+      <div class="corner-controls-right">
+        <button class="icon-circle-btn" id="reset-hero-btn" title="Reset Scene & Typography">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+        </button>
+
+        <div class="theme-swatch-pill">
+          <div class="swatch-dot swatch-magenta active" data-theme="magenta" title="Magenta / Purple Accent"></div>
+          <div class="swatch-dot swatch-cyan" data-theme="cyan" title="Cyan / Blue Accent"></div>
+          <div class="swatch-dot swatch-emerald" data-theme="emerald" title="Emerald Accent"></div>
+          <div class="swatch-dot swatch-mono" data-theme="monochrome" title="Monochrome Dark Accent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 2: KEY STATS HIGHLIGHTS
+       ========================================================================== -->
+  <section style="padding: 3rem 0;">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="glass-card stat-card" data-tilt>
+          <div class="stat-number">1st PLACE</div>
+          <div class="stat-label">ORIGIN 24H HACKATHON WINNER</div>
+        </div>
+        <div class="glass-card stat-card" data-tilt>
+          <div class="stat-number">2nd PLACE</div>
+          <div class="stat-label">TECH NOVA LICET AWARD</div>
+        </div>
+        <div class="glass-card stat-card" data-tilt>
+          <div class="stat-number">4 MONTHS</div>
+          <div class="stat-label">FLARENET INTERNSHIP EXP</div>
+        </div>
+        <div class="glass-card stat-card" data-tilt>
+          <div class="stat-number">MERN + SQL</div>
+          <div class="stat-label">FULL STACK CORE ARCHITECTURE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: ABOUT ME & OBJECTIVE
+       ========================================================================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career Objective</span>
+        <h2 class="section-title">Driven by Curiosity, Built for Scale</h2>
+        <p class="section-subtitle">A glimpse into my background, development mindset, and academic journey.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card about-card" data-tilt>
+          <h3 class="about-title">Professional Mindset & Objective</h3>
+          <p class="about-desc">
+            B.Tech Information Technology undergraduate at <strong style="color: var(--text-dark);">Loyola-ICAM College of Engineering and Technology (LICET)</strong> with hands-on full-stack development experience gained through a 4-month internship building a task-management platform at <strong style="color: var(--accent-pink);">Flarenet Company</strong>, alongside hackathon experience developing an AI-integrated security tool.
+          </p>
+          <p class="about-desc" style="margin-bottom: 0;">
+            Proficient across the MERN-adjacent stack with exposure to MongoDB and Supabase (PostgreSQL). Seeking to contribute to real-world software, web, and cloud-based projects while continuing to grow as a full-stack engineer.
+          </p>
+        </div>
+
+        <div class="glass-card about-card" data-tilt style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 class="about-title">Key Information</h3>
+            <div class="highlight-list">
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <div><strong>Location:</strong> Nungambakkam, Chennai, Tamil Nadu, India</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <div><strong>Email:</strong> kumaresanbalamurugan184@gmail.com</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <div><strong>Phone:</strong> +91 88072 78984</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-dot"></div>
+                <div><strong>Institution:</strong> Loyola-ICAM (LICET), Anna University</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <a href="https://www.linkedin.com/in/kumaresan-b-234ba0378" target="_blank" class="bracket-link" style="color: var(--accent-pink);">[LINKEDIN PROFILE]</a>
+            <a href="https://github.com/bavankumar84-gif" target="_blank" class="bracket-link" style="color: var(--accent-pink);">[GITHUB REPOS]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: WORK EXPERIENCE
+       ========================================================================== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Industry Experience</span>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Real-world production engineering building scalable task & productivity software.</p>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="glass-card exp-card" data-tilt>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <h3 class="exp-role">Full Stack Development Intern</h3>
+                <div class="exp-company">Flarenet Company • Nungambakkam, Chennai, Tamil Nadu, India</div>
+              </div>
+              <div class="exp-period">Apr 2026 – Jun 2026</div>
+            </div>
+
+            <div class="exp-points">
+              <div class="exp-point">
+                <div class="exp-point-bullet"></div>
+                <div>Working on <strong>EarnTask</strong>, a full-stack task and productivity management web application, contributing across both frontend and backend development.</div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point-bullet"></div>
+                <div>Building and integrating RESTful APIs with a database layer using <strong>MongoDB</strong> and <strong>Supabase (PostgreSQL)</strong> to support application data and workflows.</div>
+              </div>
+              <div class="exp-point">
+                <div class="exp-point-bullet"></div>
+                <div>Developing user-facing modules and interfaces while collaborating with the team on core application architecture and functionality.</div>
+              </div>
+            </div>
+
+            <div class="exp-pills">
+              <span class="pill-tag">React.js</span>
+              <span class="pill-tag">Node.js</span>
+              <span class="pill-tag">MongoDB</span>
+              <span class="pill-tag">Supabase (PostgreSQL)</span>
+              <span class="pill-tag">REST APIs</span>
+              <span class="pill-tag">Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: FEATURED PROJECTS
+       ========================================================================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portfolio Showcase</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Full-stack web applications and award-winning AI security solutions.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="glass-card project-card" data-tilt>
+          <div>
+            <div class="project-badge-winner">🏆 WINNER @ ORIGIN HACKATHON</div>
+            <h3 class="project-title">VulnShieldAI – Vulnerability Detection & Analysis Platform</h3>
+            <p class="project-desc">
+              Built at the <strong>ORIGIN 24-Hour Hackathon</strong> (SIMATS Engineering, Chennai); a full-stack web platform using React (frontend) and Node.js (backend) with an integrated LLM to automatically identify, analyze, and report security vulnerabilities, improving overall system safety.
+            </p>
+            <div class="project-meta-box">
+              <strong>Impact:</strong> Automated AI-driven multi-vulnerability scanning and instant security reports.
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/bavankumar84-gif" target="_blank" class="project-link-btn">
+              <span>View Source Code</span> ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card project-card" data-tilt>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.75rem;">
+              FLARENET PRODUCTIVITY ECOSYSTEM
+            </div>
+            <h3 class="project-title">EarnTask – Productivity & Task Management Web App</h3>
+            <p class="project-desc">
+              Full-stack task management platform built during internship at Flarenet Company. Features multi-user workspace orchestration, dynamic RESTful API routing, and dual database synchronization across MongoDB and Supabase (PostgreSQL).
+            </p>
+            <div class="project-meta-box">
+              <strong>Stack:</strong> React, Node.js, Express, MongoDB, Supabase (PostgreSQL), REST APIs.
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/bavankumar84-gif" target="_blank" class="project-link-btn">
+              <span>View Architecture</span> ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card project-card" data-tilt>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.75rem;">
+              🥈 2nd PLACE @ TECH NOVA LICET
+            </div>
+            <h3 class="project-title">Smart Web Application Prototype</h3>
+            <p class="project-desc">
+              Interactive high-performance web prototype built for the Tech Nova competition at LICET. Optimized client-side state rendering, efficient REST data pipelines, and responsive design systems.
+            </p>
+            <div class="project-meta-box">
+              <strong>Technologies:</strong> JavaScript ES6+, Python, HTML5/CSS3, REST APIs.
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/bavankumar84-gif" target="_blank" class="project-link-btn">
+              <span>GitHub Repository</span> ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: TECHNICAL SKILLS MATRIX
+       ========================================================================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Categorized breakdown of programming languages, web technologies, and developer tools.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="glass-card skill-cat-card" data-tilt>
+          <h3 class="skill-cat-title">Programming Languages</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span>Python</span><span class="skill-badge">Proficient</span></div>
+            <div class="skill-item"><span>C Language</span><span class="skill-badge">Core Logic</span></div>
+            <div class="skill-item"><span>JavaScript (ES6+)</span><span class="skill-badge">Advanced</span></div>
+          </div>
+        </div>
+
+        <div class="glass-card skill-cat-card" data-tilt>
+          <h3 class="skill-cat-title">Web Development</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span>React.js</span><span class="skill-badge">Frontend</span></div>
+            <div class="skill-item"><span>Node.js</span><span class="skill-badge">Backend</span></div>
+            <div class="skill-item"><span>HTML5 & CSS3</span><span class="skill-badge">Glassify UI</span></div>
+          </div>
+        </div>
+
+        <div class="glass-card skill-cat-card" data-tilt>
+          <h3 class="skill-cat-title">Database & Tools</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span>MongoDB</span><span class="skill-badge">NoSQL</span></div>
+            <div class="skill-item"><span>Supabase</span><span class="skill-badge">PostgreSQL</span></div>
+            <div class="skill-item"><span>SQL & Git</span><span class="skill-badge">Tooling</span></div>
+          </div>
+        </div>
+
+        <div class="glass-card skill-cat-card" data-tilt>
+          <h3 class="skill-cat-title">Other & Integrations</h3>
+          <div class="skill-list">
+            <div class="skill-item"><span>REST APIs</span><span class="skill-badge">Architecture</span></div>
+            <div class="skill-item"><span>GitHub & VS Code</span><span class="skill-badge">Workflow</span></div>
+            <div class="skill-item"><span>LLM Integration</span><span class="skill-badge">AI Tools</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: EDUCATION & ACHIEVEMENTS
+       ========================================================================== -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Academics & Honors</span>
+        <h2 class="section-title">Education & Achievements</h2>
+        <p class="section-subtitle">Academic record from Anna University & awards won at regional hackathons.</p>
+      </div>
+
+      <div class="edu-achieve-grid">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">Education Record</h3>
+
+          <div class="glass-card edu-item" data-tilt>
+            <div class="edu-degree">B.Tech, Information Technology</div>
+            <div class="edu-school">Loyola-ICAM College of Engineering and Technology (LICET), Chennai</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Board / University: Anna University</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted);">Duration: 2025 – 2029</span>
+              <span class="edu-score-badge">CGPA: Sem 1 – 8.3 | Sem 2 – 7.1</span>
+            </div>
+          </div>
+
+          <div class="glass-card edu-item" data-tilt>
+            <div class="edu-degree">Class XII (Higher Secondary)</div>
+            <div class="edu-school">Saraswathi Matric Higher Secondary School</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Board: State Board</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted);">Year: 2025</span>
+              <span class="edu-score-badge">Score: 91%</span>
+            </div>
+          </div>
+
+          <div class="glass-card edu-item" data-tilt>
+            <div class="edu-degree">Class X (Secondary School)</div>
+            <div class="edu-school">SDA School</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Board: State Board</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.85rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted);">Year: 2023</span>
+              <span class="edu-score-badge">Score: 82%</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">Competitive Honors</h3>
+
+          <div class="glass-card achieve-item" data-tilt>
+            <div style="display: inline-block; padding: 0.25rem 0.75rem; background: var(--accent-gradient); color: #fff; border-radius: var(--radius-full); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; margin-bottom: 0.75rem;">
+              🏆 1st PLACE / WINNER (2026)
+            </div>
+            <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--text-dark);">Won the ORIGIN 24-Hour Hackathon</h4>
+            <div style="color: var(--accent-pink); font-weight: 700; font-size: 0.95rem; margin-top: 0.2rem;">SIMATS Engineering, Chennai</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.6rem; line-height: 1.5;">
+              Developed VulnShieldAI, an automated AI LLM vulnerability scanner built in 24 hours to analyze source code security flaws.
+            </p>
+          </div>
+
+          <div class="glass-card achieve-item" data-tilt>
+            <div style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.12); color: var(--text-dark); border-radius: var(--radius-full); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; margin-bottom: 0.75rem;">
+              🥈 2nd PLACE
+            </div>
+            <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--text-dark);">Tech Nova Competition</h4>
+            <div style="color: var(--accent-pink); font-weight: 700; font-size: 0.95rem; margin-top: 0.2rem;">Loyola-ICAM College of Engineering & Technology (LICET)</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.6rem; line-height: 1.5;">
+              Awarded 2nd Prize for software prototype innovation and efficient full-stack implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: CONTACT & MESSAGING
+       ========================================================================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's Build Together</h2>
+        <p class="section-subtitle">Reach out for full-stack opportunities, software development roles, or project collaborations.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="glass-card contact-info-card" data-tilt>
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; margin-bottom: 1.25rem;">Direct Channels</h3>
+
+            <div class="contact-channel-item">
+              <div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">EMAIL ADDRESS</div>
+                <div style="font-weight: 700; font-size: 0.95rem; word-break: break-all;">kumaresanbalamurugan184@gmail.com</div>
+              </div>
+              <button class="copy-btn" onclick="copyEmail()">Copy</button>
+            </div>
+
+            <div class="contact-channel-item">
+              <div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">PHONE / WHATSAPP</div>
+                <div style="font-weight: 700; font-size: 0.95rem;">+91 88072 78984</div>
+              </div>
+              <button class="copy-btn" onclick="copyPhone()">Copy</button>
+            </div>
+
+            <div class="contact-channel-item">
+              <div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">LOCATION</div>
+                <div style="font-weight: 700; font-size: 0.95rem;">Nungambakkam, Chennai, Tamil Nadu, India</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; text-transform: uppercase;">Social Profiles</div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="https://www.linkedin.com/in/kumaresan-b-234ba0378" target="_blank" class="bracket-link" style="color: var(--accent-pink);">[LINKEDIN]</a>
+              <a href="https://github.com/bavankumar84-gif" target="_blank" class="bracket-link" style="color: var(--accent-pink);">[GITHUB]</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card contact-form-card" data-tilt>
+          <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 800; margin-bottom: 1.25rem;">Send a Message</h3>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input class="form-input" type="text" id="name" placeholder="e.g. Alex Morgan" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" placeholder="e.g. alex@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="subject">Subject</label>
+              <input class="form-input" type="text" id="subject" placeholder="Project Opportunity / Collaboration" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" placeholder="Hi Kumaresan, I'd like to discuss a project..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message ➔</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 900;">
+        <span>KUMARESAN B</span>
+        <span style="font-family: var(--font-script); color: var(--accent-pink);">dev</span>
+      </div>
+
+      <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+        © 2026 Kumaresan B. All rights reserved. • Editorial Light Grid UI System
+      </div>
+
+      <div style="display: flex; gap: 1rem;">
+        <a href="https://www.linkedin.com/in/kumaresan-b-234ba0378" target="_blank" class="bracket-link">[LINKEDIN]</a>
+        <a href="https://github.com/bavankumar84-gif" target="_blank" class="bracket-link">[GITHUB]</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
