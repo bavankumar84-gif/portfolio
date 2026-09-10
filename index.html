@@ -58,7 +58,7 @@
       <span>KUMARESAN</span>
       <span class="nav-logo-script">dev</span>
     </a>
-    <div class="nav-bracket-links">
+    <div class="nav-bracket-links" id="nav-links">
       <a href="#about"      class="bracket-link">[ABOUT]</a>
       <a href="#experience" class="bracket-link">[EXPERIENCE]</a>
       <a href="#projects"   class="bracket-link">[PROJECTS]</a>
@@ -66,7 +66,20 @@
       <a href="#education"  class="bracket-link">[ACADEMICS]</a>
       <a href="#contact"    class="bracket-link">[CONTACT]</a>
     </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <a href="#about"      class="mobile-nav-link">[ABOUT]</a>
+    <a href="#experience" class="mobile-nav-link">[EXPERIENCE]</a>
+    <a href="#projects"   class="mobile-nav-link">[PROJECTS]</a>
+    <a href="#skills"     class="mobile-nav-link">[SKILLS]</a>
+    <a href="#education"  class="mobile-nav-link">[ACADEMICS]</a>
+    <a href="#contact"    class="mobile-nav-link">[CONTACT]</a>
+  </div>
 
   <!-- ============================================================
        SECTION 1 — HERO
@@ -85,7 +98,7 @@
 
         <!-- Massive Creator Name (Jose Regish Style) -->
         <div class="hero-name-block">
-          <h1 class="hero-giant-name">KUMARESAN B.</h1>
+          <h1 class="hero-giant-name" id="hero-name">KUMARESAN B.</h1>
         </div>
 
         <!-- Rotating Headline / Role Strip -->
@@ -121,7 +134,7 @@
 
         <!-- Sub-caption -->
         <div class="hero-sub-caption">
-          EX-INTERN @ FLARENET &nbsp;•&nbsp; ORIGIN 24H HACKATHON WINNER &nbsp;•&nbsp; CHENNAI, INDIA
+          EX-INTERN @ FLARENET &nbsp;•&nbsp; CHENNAI, INDIA
         </div>
 
         <!-- Hero CTA Row -->
@@ -137,7 +150,7 @@
         <div class="hero-portrait-card">
           <div class="portrait-glow-ring"></div>
           <div class="portrait-image-wrapper">
-            <img src="profile.jpg" alt="Kumaresan B — Full Stack & AI Developer" class="portrait-img" />
+            <img src="assets/profile.jpg" alt="Kumaresan B — Full Stack & AI Developer" class="portrait-img" />
             <div class="portrait-overlay-gradient"></div>
           </div>
           <div class="portrait-badge portrait-badge-top">
@@ -456,7 +469,7 @@
 
         <!-- Tech Nova Card -->
         <div class="glass-card project-card" data-tilt>
-          <div class="card-tag" style="color:var(--accent-purple)">🥈 2nd PLACE · TECH NOVA LICET</div>
+          <div class="card-tag" style="color:var(--accent-pink)">🥈 2nd PLACE · TECH NOVA LICET</div>
           <h3 class="project-title">Smart Web App Prototype</h3>
           <p class="project-tagline">High-Performance Web Prototype</p>
           <p class="project-desc">

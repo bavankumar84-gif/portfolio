@@ -26,6 +26,8 @@
     initSoundEffects();
     initInteractiveUtilities();
     initContactForm();
+    animateHeroName();
+    initHamburgerMenu();
   });
 
   /* ==========================================================================
@@ -194,7 +196,7 @@
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 0, 127, 0.45)';
+        ctx.fillStyle = 'rgba(200, 81, 26, 0.45)';
         ctx.fill();
       }
     }
@@ -240,7 +242,7 @@
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(255, 0, 127, ${mAlpha})`;
+          ctx.strokeStyle = `rgba(200, 81, 26, ${mAlpha})`;
           ctx.lineWidth = 1.1;
           ctx.stroke();
         }
@@ -274,8 +276,8 @@
       // Torus Knot geometry with physical sheen
       const geometry = new THREE.TorusKnotGeometry(1.05, 0.32, 100, 24);
       const material = new THREE.MeshPhysicalMaterial({
-        color: 0xff007f,
-        emissive: 0x1f0030,
+        color: 0xC8511A,
+        emissive: 0x3a1800,
         roughness: 0.18,
         metalness: 0.85,
         clearcoat: 1.0,
@@ -299,11 +301,11 @@
       const ambientLight = new THREE.AmbientLight(0xffffff, 1.4);
       scene.add(ambientLight);
 
-      const pointLight1 = new THREE.PointLight(0xff007f, 3.5, 40);
+      const pointLight1 = new THREE.PointLight(0xC8511A, 3.5, 40);
       pointLight1.position.set(4, 3, 5);
       scene.add(pointLight1);
 
-      const pointLight2 = new THREE.PointLight(0x7928ca, 3.0, 40);
+      const pointLight2 = new THREE.PointLight(0xB8420F, 3.0, 40);
       pointLight2.position.set(-4, -3, 3);
       scene.add(pointLight2);
 
@@ -380,7 +382,7 @@
           vy: (Math.random() - 0.5) * 5,
           size: Math.random() * 2.5 + 1,
           alpha: 1,
-          color: Math.random() > 0.5 ? '#ff007f' : '#1a1a18',
+          color: Math.random() > 0.5 ? '#C8511A' : '#1a1a18',
         });
       }
 
@@ -700,4 +702,108 @@
       form.reset();
     });
   }
+  /* ==========================================================================
+     12. Animated Hero Name Letters
+     ========================================================================== */
+  function animateHeroName() {
+    const nameEl = document.getElementById('hero-name');
+    if (!nameEl) return;
+
+    const text = nameEl.textContent || '';
+    nameEl.textContent = '';
+
+    // Split into individual letter spans
+    const letters = Array.from(text);
+    letters.forEach((char, i) => {
+      const span = document.createElement('span');
+      span.classList.add('hero-name-letter');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+
+      // Each letter gets a unique float animation with staggered offset
+      // Use CSS custom properties for the unique delay & duration
+      const delay = (i * 0.18).toFixed(2);
+      const dur   = (2.8 + (i % 4) * 0.55).toFixed(2);
+      const amplitude = 8 + (i % 3) * 5; // px variance
+      const rotate = ((i % 2 === 0) ? -1 : 1) * (1.5 + (i % 3));
+
+      span.style.setProperty('--letter-i', i);
+      span.style.animationName        = 'name-letter-float';
+      span.style.animationDuration    = `${dur}s`;
+      span.style.animationDelay       = `${delay}s`;
+      span.style.animationTimingFunction = 'ease-in-out';
+      span.style.animationIterationCount = 'infinite';
+      span.style.animationFillMode    = 'both';
+
+      // Override animation keyframes per letter with inline style
+      // We'll use a dynamic keyframe injection trick
+      const keyframeName = `nlf${i}`;
+      if (!document.getElementById(`kf-${keyframeName}`)) {
+        const style = document.createElement('style');
+        style.id = `kf-${keyframeName}`;
+        style.textContent = `
+          @keyframes ${keyframeName} {
+            0%,100% { transform: translateY(0px) rotate(0deg); }
+            30%      { transform: translateY(-${amplitude}px) rotate(${rotate}deg); }
+            60%      { transform: translateY(${Math.round(amplitude * 0.5)}px) rotate(${-rotate * 0.6}deg); }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      span.style.animationName = keyframeName;
+
+      nameEl.appendChild(span);
+    });
+
+    // Add hover interaction — pause all, highlight hovered
+    nameEl.querySelectorAll('.hero-name-letter').forEach((span) => {
+      span.addEventListener('mouseenter', () => {
+        nameEl.querySelectorAll('.hero-name-letter').forEach(s => {
+          s.style.animationPlayState = 'paused';
+        });
+        span.style.animationPlayState = 'running';
+      });
+      span.addEventListener('mouseleave', () => {
+        nameEl.querySelectorAll('.hero-name-letter').forEach(s => {
+          s.style.animationPlayState = 'running';
+        });
+      });
+    });
+  }
+
+
+  // ============================================================
+  // Hamburger Mobile Menu
+  // ============================================================
+  function initHamburgerMenu() {
+    const btn     = document.getElementById('hamburger-btn');
+    const overlay = document.getElementById('mobile-nav-overlay');
+    const links   = overlay ? overlay.querySelectorAll('.mobile-nav-link') : [];
+    if (!btn || !overlay) return;
+
+    function openMenu() {
+      btn.classList.add('open');
+      overlay.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      btn.classList.remove('open');
+      overlay.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    btn.addEventListener('click', () => {
+      overlay.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    links.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Close on resize back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  }
+
 })();
+
